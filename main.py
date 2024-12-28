@@ -38,14 +38,15 @@ def run_flow(prompt: str) -> dict:
 def main():
     st.title("Estoy lista para ayudarte")
 
+    st.session_state.messages = []
     #inicializa el historial
-    if "messages" in st.session_state:
-        st.session_state.messages = []
+    #if "messages" in st.session_state:
+    #    st.session_state.messages = []
 
     #muestra el historial de mensajes
-    for message in st.session_state.messages:
-        with st.chat_message(message["role"]):
-            st.markdow(message["content"])
+    #for message in st.session_state.messages:
+    #    with st.chat_message(message["role"]):
+    #        st.markdow(message["content"])
 
     if prompt := st.chat_input("Pídeme alguna tarea"):
         with st.chat_message("user"):
